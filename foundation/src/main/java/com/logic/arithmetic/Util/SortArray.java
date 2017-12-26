@@ -2,6 +2,7 @@ package com.logic.arithmetic.Util;
 
 /**
  * sort array
+ *
  * @author logic
  */
 public class SortArray {
@@ -22,10 +23,31 @@ public class SortArray {
             }
 
         }
+        outputArray(array);
+        return array;
+    }
+
+    public static double[] selectSort(double[] array) {
+        if (array.length < 2) {
+            return array;
+        } else {
+            for (int i = 0; i < array.length - 1; ) {
+                int minindex = 0;
+                for (int j = 0; i < array.length; ) {
+                    if (array[j] > array[minindex]) {
+                        minindex = j;
+                    }
+                }
+            }
+        }
+        outputArray(array);
+        return array;
+    }
+
+    private static void outputArray(double[] array) {
         System.out.println("array quick sort result:");
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
-        return array;
     }
 }

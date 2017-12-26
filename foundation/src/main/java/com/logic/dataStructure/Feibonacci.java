@@ -1,4 +1,4 @@
-package com.logic.arithmetic.Util;
+package com.logic.dataStructure;
 
 /**
  * feibonacci number

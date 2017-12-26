@@ -1,0 +1,39 @@
+PL/SQL语句块:
+/*
+*声明:
+*/
+DECLARE
+	/*
+	*执行语句
+	*/
+BEGIN
+	/*
+          异常处理
+	*/
+EXCEPTION
+END;
+
+
+set serveroutput on
+--�����̨����򵥵��ʺ���
+
+declare
+begin
+ dbms_output.put_line('Hello Cissst!');
+end;
+
+-- ��������
+-- identifier  [ CONSTANT ]   datatype  [ NOT NULL] {:=|DEFAULT   expr};
+declare
+ -- ��������
+ v_username varchar2(20) not null := 'cissst';
+ v_number1 int := 10;
+ v_number2 real := 100;
+ -- ��������
+ c_pi constant number(8,2) default 3.14;
+begin
+  dbms_output.put_line('v_username:' || v_username);
+  dbms_output.put_line('v_number1:' || v_number1);
+  dbms_output.put_line('v_number2:' || v_number2);
+  dbms_output.put_line('PI:' || c_pi);
+end;
