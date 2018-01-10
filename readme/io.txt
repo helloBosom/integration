@@ -1,0 +1,59 @@
+java IO的一般使用原则：
+ 
+一、按数据来源（去向）分类：
+1、是文件： FileInputStream, FileOutputStream, FileReader, FileWriter
+2、是byte[]：ByteArrayInputStream, ByteArrayOutputStream
+3、是Char[]: CharArrayReader, CharArrayWriter
+4、是String: StringBufferInputStream, StringReader, StringWriter
+5、网络数据流：InputStream, OutputStream, Reader, Writer
+ 
+二、按是否格式化输出分：
+1、要格式化输出：PrintStream, PrintWriter
+ 
+三、按是否要缓冲分：
+1、要缓冲：BufferedInputStream, BufferedOutputStream, BufferedReader, BufferedWriter
+ 
+四、按数据格式分：
+1、二进制格式（只要不能确定是纯文本的）: InputStream, OutputStream及其所有带Stream结束的子类
+2、纯文本格式（含纯英文与汉字或其他编码方式）；Reader, Writer及其所有带Reader, Writer的子类
+ 
+五、按输入输出分：
+1、输入：Reader, InputStream类型的子类
+2、输出：Writer, OutputStream类型的子类
+ 
+六、特殊需要：
+1、从Stream到Reader,Writer的转换类：InputStreamReader, OutputStreamWriter
+2、对象输入输出：ObjectInputStream, ObjectOutputStream
+3、进程间通信：PipeInputStream, PipeOutputStream, PipeReader, PipeWriter
+4、合并输入：SequenceInputStream
+5、更特殊的需要：PushbackInputStream, PushbackReader, LineNumberInputStream, LineNumberReader
+ 
+决定使用哪个类以及它的构造进程的一般准则如下（不考虑特殊需要）：
+首先，考虑最原始的数据格式是什么： 原则四
+第二，是输入还是输出：原则五
+第三，是否需要转换流：原则六第1点
+第四，数据来源（去向）是什么：原则一
+第五，是否要缓冲：原则三 （特别注明：一定要注意的是readLine()是否有定义，有什么比read, write更特殊的输入或输出方法）
+第六，是否要格式化输出：原则二
+ 
+Java中Inputstream与Reader的区别
+  
+Reader支持16位的Unicode字符输出，InputStream支持8位的字符输出。
+Reader和InputStream分别是I/O库提供的两套平行独立的等级机构，
+InputStream、OutputStream是用来处理8位元的流，
+Reader、Writer是用来处理16位元的流。
+而在JAVA语言中，byte类型是8位的，char类型是16位的，所以在处理中文的时候需要用Reader和Writer。
+值得说明的是，在这两种等级机构下，还有一道桥梁InputStreamReader、OutputStreamWriter负责进行InputStream到Reader的适配和由OutputStream到Writer的适配。 
+  
+java.io.Reader 和 java.io.InputStream 组成了 Java输入类。Reader 用于读入16位字符，也就是 Unicode编码的字符；而 InputStream 用于读入 ASCII字符和二进制数据。
+在 Java中，有不同类型的 Reader 输入流对应于不同的数据源：
+    FileReader 用于从文件输入；
+    CharArrayReader 用于从程序中的字符数组输入；
+    StringReader 用于从程序中的字符串输入；
+    PipedReader 用于读取从另一个线程中的 PipedWriter 写入管道的数据。
+相应的也有不同类型的 InputStream 输入流对应于不同的数据源：FileInputStream，ByteArrayInputStream，StringBufferInputStream，PipedInputStream。
+另外，还有两种没有对应 Reader 类型的 InputStream 输入流：
+    Socket 用于套接字；
+    URLConnection 用于 URL 连接。
+这两个类使用 getInputStream() 来读取数据。
+相应的，java.io.Writer 和 java.io.OutputStream 也有类似的区别。

@@ -1,0 +1,33 @@
+j2se
+data type:
+    byte,short,char,int,long,float,double,boolean,void
+data structure:
+    array,collection,list,queue,heap,stack,map
+xml
+html
+jdbc
+sql
+jsp
+servlet
+json
+ajax
+annotation
+yum
+io
+multithreading
+concurrent
+css/div
+javascript
+http
+tcp/ip
+udp
+nosql
+linux
+Bullshifier
+Alpine Linux
+DevOps
+docker
+kubernetes
+nginx
+h5
+Serialization

@@ -1,0 +1,137 @@
+总而言之,  如果你想1个类的对象支持比较(排序), 就必须实现Comparable接口
+http://blog.csdn.net/nvd11/article/details/27393445
+
+线程的优先级用1-10之间的整数表示，数值越大优先级越高，默认的优先级为5。通过thread.setProperty()实现
+修改maven  setting文件的mirrors可修改镜像路径
+
+中文: chcp 65001
+English: chcp 936 
+Cmd设置字符编码为utf-8
+办法
+win+R --> regedit --> 计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor --> 添加一个字符串值 
+(名称为：autorun 数据为：chcp 65001)
+
+EJB:Enterprise Java Beans
+    会话Bean(session Bean)
+	实体Bean(Entity Bean)
+	消息驱动Bean(MessageDriven Bean)
+     
+JPA:Java persistence API 持久层API
+ORM:Object Relational Mapping 对象关系映射	 
+
+安装virtualbox失败
+HKEY_LOCAL_MACHINE/SYSTEM/ControlSet001/Control/Network 
+将 ab(默认) REG_SZ 的值修改为20(里面是十进制的数值) 
+
+如果在发布时使用mvn deploy -P release 的命令，由于版本号后不带-SNAPSHOT故当成是正式发布版本
+如果发布时使用mvn deploy命令，那么就会使用默认的版本号0.1-SNAPSHOT，此时maven会认为是快照版本，会自动发布到快照版本库。
+在distributionManagement段中配置的是snapshot快照库和release发布库的地址
+
+maven获取真正起作用的repository集合流程：首先会获取pom.xml里的repository集合，然后在settings.xml里找mirrors元素，
+如果repository的id和mirror的mirrorOf的值相同，则该mirror替代该repository，如果该repository找不到对应的mirror，则使用其本身，
+依此可以得到最终起作用的repository集合
+
+centos默认以root登录：
+vi /etc/gdm/custom.conf
+[daemon]
+AutomaticLoginEnable=True
+AutomaticLogin=root  #你想自动登录的用户名
+
+linux添加删除用户
+useradd name:添加用户 name为你想要的用户名，存储在/home 的目录里面
+userdel -rf name:删除名称为name的用户。
+
+System.exit(0)是将整个虚拟机里的内容都停掉了 ，而dispose()只是关闭这个窗口，但是并没有停止整个application exit() 。无论如何，内存都释放了！也就是说连JVM都关闭了，内存里根本不可能还有什么东西
+System.exit(0)是正常退出程序，而System.exit(1)或者说非0表示非正常退出程序
+System.exit(status)不管status为何值都会退出程序。和return 相比有以下不同点：return是回到上一层，而System.exit(status)是回到最上层
+
+JDK（开发环境）
+JRE（运行环境）
+JRE和java类库以及运行java程序所需要的其他组件一起构成JVM的一个实现。
+
+idea liense server:
+http://intellij.mandroid.cn/
+http://idea.imsxm.com/
+http://idea.iteblog.com/key.php
+
+代理：
+静态代理，动态代理
+java动态代理库cglib 底层基于java字节码操作框架ASM实现
+核心类：net.sf.cglib.proxy.Enhancer  主要增强类,通过字节码技术动态创建委托类的子类实例。
+        net.sf.cglib.proxy.MethodInterceptor:常用的方法拦截器接口，需要实现intercept方法,实现具体拦截处理;
+
+运算符		
+~:非     &:与	|：或  ^:异或	
+~:非     &:与	|：或  ^:异或
+
+转义字符      意义                            ASCII码值（十进制）
+\a           响铃(BEL)                             007
+\b       退格(BS) ，将当前位置移到前一列           008
+\f       换页(FF)，将当前位置移到下页开头          012
+\n       换行(LF) ，将当前位置移到下一行开头       010
+\r       回车(CR) ，将当前位置移到本行开头         013
+\t       水平制表(HT) （跳到下一个TAB位置）        009
+\v       垂直制表(VT)                              011
+\\       代表一个反斜线字符''\'                    092
+\'       代表一个单引号（撇号）字符                039
+\"       代表一个双引号字符                        034
+\0       空字符(NULL)                              000
+\ddd     1到3位八进制数所代表的任意字符           三位八进制
+\xhh     1到2位十六进制所代表的任意字符          二位十六进制	
+
+接口是对动作的抽象，抽象类是对根源的抽象。
+
+ResourceBundle  语言处理,国际化
+
+各种语言的链表实现：
+Singly-linked list/Element definition
+Singly-linked list/Element insertion
+
+String转流
+InputSteam in = new ByteArrayInputStream(str.getBytes());
+
+消息队列：http://blog.csdn.net/shaobingj126/article/details/50585035
+
+事件驱动是指在持续事务管理过程中，进行决策的一种策略，即跟随当前时间点上出现的事件，调动可用资源，执行相关任务，使不断出现的问题得以解决，防止事务堆积。
+在计算机编程、公共关系、经济活动等领域均有应用。
+
+1.ArrayList
+ArrayList 初始化大小是 10 （如果你知道你的arrayList 会达到多少容量，可以在初始化的时候就指定，能节省扩容的性能开支） 
+扩容点规则是，新增的时候发现容量不够用了，就去扩容 
+扩容大小规则是，扩容后的大小= 原始大小+原始大小/2 + 1。（例如：原始大小是 10 ，扩容后的大小就是 10 + 5+1 = 16）
+2.linkedList
+linkedList 是一个双向链表，没有初始化大小，也没有扩容的机制，就是一直在前面或者后面新增就好。 
+对于双向链表的理解
+3.HashMap
+HashMap 初始化大小是 16 ，扩容因子默认0.75（可以指定初始化大小，和扩容因子） 
+扩容机制.(当前大小 和 当前容量 的比例超过了 扩容因子，就会扩容，扩容后大小为 一倍。例如：初始大小为 16 ，扩容因子 0.75 ，当容量为12的时候，比例已经是0.75 。
+触发扩容，扩容后的大小为 32.)
+
+Nginx编译环境：
+yum install gcc-c++
+yum install -y pcre pcre-devel
+yum install -y zlib zlib-devel
+yum install -y openssl openssl-devel
+
+google guava immutableList：不可变集合
+
+java.util.concurrent.ConcurrentMap接口代表一个Map,它可以处理并发访问
+
+Java获取当前类名的两种方法
+适用于非静态方法：this.getClass().getName()
+适用于静态方法：Thread.currentThread().getStackTrace()[1].getClassName()
+
+org.apache.poi  操作office
+
+查看pid: netstat -ano
+
+定时,Timer类
+
+nexus:maven私服
+
+maven:package是把jar打到本项目的target下，而install时把target下的jar安装到本地仓库，供其他项目使用.
+
+InvocationHandler：代理
+
+System.getenv：获取指定的环境变量值
+String.valueOf：返回参数的字符串表示形式
