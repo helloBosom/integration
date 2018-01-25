@@ -1,4 +1,4 @@
-package productionAndConsumption;
+package fun.peri.thread;
 
 public class ProduceThread implements Runnable {
     private Storage storage;
@@ -19,5 +19,4 @@ public class ProduceThread implements Runnable {
     public ProduceThread(Storage storage) {
         this.storage = storage;
     }
-
 }

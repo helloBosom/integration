@@ -1,4 +1,4 @@
-package productionAndConsumption;
+package fun.peri.thread;
 
 public class TestClient {
     public static void main(String[] args) {

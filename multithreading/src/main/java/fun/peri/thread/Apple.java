@@ -1,4 +1,4 @@
-package productionAndConsumption;
+package fun.peri.thread;
 
 public class Apple {
     private Integer appleId;

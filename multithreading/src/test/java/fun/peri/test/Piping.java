@@ -1,3 +1,5 @@
+package fun.peri.test;
+
 import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;

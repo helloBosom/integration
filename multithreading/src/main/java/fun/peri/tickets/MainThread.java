@@ -1,4 +1,4 @@
-package tickets;
+package fun.peri.tickets;
 
 /**
  * mimic ticket software

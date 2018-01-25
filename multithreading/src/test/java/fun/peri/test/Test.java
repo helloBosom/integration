@@ -1,4 +1,7 @@
-package tickets;
+package fun.peri.test;
+
+import fun.peri.tickets.RandomRunnable;
+import fun.peri.tickets.RandomThread;
 
 /**
  * 在Java类中使用super来引用基类的成分.
