@@ -2,7 +2,7 @@ package com.logic.arithmetic;
 
 import java.util.Scanner;
 
-/*
+/**
  * 判断用户名,密码,email合法性
  */
 public class TestClient {

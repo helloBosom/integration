@@ -5,14 +5,13 @@ import java.util.ResourceBundle;
 
 public class Messages {
     /**
-     * public abstract class ResourceBundleextends Object
-     * 资源包包含特定于语言环境的对象。当程序需要一个特定于语言环境的资源时（如
-     * String），程序可以从适合当前用户语言环境的资源包中装入它。
-     * 以这种方式可以编写很大程度上独立于用户语言环境的程序代码，它将资源包中大部分（
-     * 如果不是全部）特定于语言环境的信息隔离开来
+     * public abstract class ResourceBundle extends Object
+     * 资源包包含特定于语言环境的对象。当程序需要一个特定于语言环境的资源时（如String），
+     * 程序可以从适合当前用户语言环境的资源包中装入它。
+     * 以这种方式可以编写很大程度上独立于用户语言环境的程序代码，它将资源包中大部分（如果不是全部）
+     * 特定于语言环境的信息隔离开来
      */
-    private static final String BUNDLE_NAME = "com.cissst.software.animal.Messages";
-    //$NON-NLS-1$
+    private static final String BUNDLE_NAME = "com.logic.model.Message";
 
     /**
      * getBundle(String baseName, Locale locale, ClassLoader loader)

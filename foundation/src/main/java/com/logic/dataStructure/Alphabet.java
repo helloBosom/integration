@@ -2,7 +2,7 @@ package com.logic.dataStructure;
 
 import java.util.Scanner;
 
-public class Question1 {
+public class Alphabet {
     static final String Regex = "[a-z]+";
 
     public static void main(String[] args) {
