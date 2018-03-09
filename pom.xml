@@ -14,7 +14,6 @@
         <module>multithreading</module>
         <module>sql</module>
         <module>web</module>
-        <module>web</module>
         <module>redBlackTree</module>
         <module>util</module>
     </modules>

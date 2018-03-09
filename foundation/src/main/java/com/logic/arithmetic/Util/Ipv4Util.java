@@ -159,7 +159,7 @@ public class Ipv4Util {
         int ipValue = getIpV4Value(ip);
         return (mask & ipValue);
     }
-ip
+
     /**
      * 判断ipV4或者mask地址是否合法，通过正则表达式方式进行判断
      *
