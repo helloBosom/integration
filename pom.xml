@@ -16,6 +16,7 @@
         <module>web</module>
         <module>web</module>
         <module>redBlackTree</module>
+        <module>util</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
