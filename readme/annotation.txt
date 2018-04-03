@@ -1,7 +1,9 @@
 https://www.cnblogs.com/renhui/p/5910300.html
 https://www.cnblogs.com/lyy-2016/p/6288535.html
+
 Annotation (注解) 表示的是能够添加到Java源代码的语法元数据。类、方法、变量、参数、包都可以被注解，
 可用来将信息元数据和程序元素进行关联。
+
 Annotation 作用
 a.标记作用，用于告诉编译器一些信息
 b.编译时动态处理，如动态生成代码

@@ -33,3 +33,4 @@ h5
 Serialization
 webSocket
 tor
+jdk11抽离javafx和j2ee

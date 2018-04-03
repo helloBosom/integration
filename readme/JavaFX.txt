@@ -1,0 +1,37 @@
+http://www.javafxchina.net
+
+在JavaFX公开的API之下JavaFX代码运行引擎由几大部分组成：
+   一个JavaFX 高性能图形引擎，名为Prism；
+   一个简洁高效的窗体系统，名为Glass；
+   一个媒体引擎；
+   一个web引擎。
+   
+● 场景图(Scene Graph)
+
+● JavaFX功能的公开API(Java Public APIs for JavaFX Features)
+
+● 图形系统(Graphics System)
+
+● Glass窗体工具包(Glass Windowing Toolkit)
+
+● 多媒体和图像(Media and Images)
+
+● Web组件(Web Component)
+
+● CSS
+
+● UI控件(UI Controls)
+
+● 布局(Layout)
+
+● 2-D和3-D转换(2-D and 3-D Transformations)
+
+● 视觉特效(Visual Effects)
+
+javafx.scene API允许创建和定义各种内容，例如：
+
+● 节点(Nodes)：包括各种形状(2D或3D)、图像、多媒体、内嵌的Web浏览器、文本、UI控件、图表、组和容器
+
+● 状态(State)：变换(节点的定位和定向)、视觉效果、以及内容的其它视觉状态。
+
+● 效果(Effects)：可以改变场景图节点的外观的简单对象。例如模糊、阴影、图像调整。
