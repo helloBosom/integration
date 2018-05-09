@@ -21,7 +21,6 @@ public class SortArray {
                     }
                 }
             }
-
         }
         outputArray(array);
         return array;
@@ -46,8 +45,8 @@ public class SortArray {
 
     private static void outputArray(double[] array) {
         System.out.println("array quick sort result:");
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+        for (double anArray : array) {
+            System.out.println(anArray);
         }
     }
 }

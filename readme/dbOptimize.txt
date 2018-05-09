@@ -1,0 +1,12 @@
+数据库调优:
+    入口:
+	    SQL语句
+		io
+		内存
+		cpu
+		网络
+		锁
+	索引:空间换时间
+	硬件
+	快速存储设备：
+	    RAID(Redundat Array of Independent Disks)独立冗余磁盘阵列

@@ -175,6 +175,11 @@ vmware没网解决方法：
 [root@mina0 hadoop]# systemctl stop NetworkManager
 [root@mina0 hadoop]# systemctl disable NetworkManager
 
+centos7没网：
+cd /etc/sysconfig/network-scripts/
+修改配置文件
+reboot=true
+
 然后重启网卡：
 [root@mina0 hadoop]# systemctl restart network
 [root@mina0 hadoop]# ifconfig
