@@ -48,7 +48,7 @@ END IF;
 END;
 
 DECLARE
-v_count     NUMBER(3) := 0;
+v_count NUMBER (3) := 0;
 v_sumResult NUMBER (5) := 0;
 BEGIN
 LOOP
@@ -63,7 +63,7 @@ dbms_output.put_line('sum:' || v_sumResult);
 END;
 
 DECLARE
-v_count     NUMBER(4) := 0;
+v_count NUMBER (4) := 0;
 v_sumResult NUMBER (6) := 0;
 BEGIN
 LOOP
@@ -75,7 +75,7 @@ dbms_output.put_line(v_sumResult);
 END;
 
 DECLARE
-v_count     NUMBER(4) := 0;
+v_count NUMBER (4) := 0;
 v_sumResult NUMBER (6) := 0;
 BEGIN
 WHILE (v_count < 100) LOOP
@@ -87,7 +87,7 @@ END;
 
 
 DECLARE
-v_count     NUMBER(4) := 0;
+v_count NUMBER (4) := 0;
 v_sumResult NUMBER (6) := 0;
 BEGIN
 FOR v_count IN 1..100 LOOP
@@ -97,7 +97,7 @@ dbms_output.put_line(v_sumResult);
 END;
 
 DECLARE
-v_count     NUMBER(6) := 1;
+v_count NUMBER (6) := 1;
 v_sumResult NUMBER (6) := 1;
 v_temp NUMBER (6) := 1;
 BEGIN
@@ -217,7 +217,7 @@ END LOOP;
 END;
 
 DECLARE
-v_count     NUMBER(6) := 100000;
+v_count NUMBER (6) := 100000;
 v_productId product_change.product_id%TYPE;
 BEGIN
 SELECT max(product_id)
@@ -256,8 +256,8 @@ WHERE pc.product_id = v_product_info.product_id;
 IF (v_count = 0)
 THEN
 INSERT INTO product_change VALUES (
-v_product_info.product_id, v_product_info.product_type_id,
-v_product_info.name, v_product_info.price);
+  v_product_info.product_id, v_product_info.product_type_id,
+  v_product_info.name, v_product_info.price);
 ELSE
 UPDATE product_change
 SET product_type_id = v_product_info.product_type_id,

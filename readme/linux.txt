@@ -20,3 +20,10 @@ grep 过滤信息
 cut  显示某一行          -d
 wc   统计字符数
 sort 排序                -n -t
+
+ls | more
+ls | less
+
+从日志中查询符合条件的内容并输出到另一文件：
+grep 'test' out.log > out1.log
+grep 'test' out.log | tee -a out1.log
