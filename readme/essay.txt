@@ -188,3 +188,58 @@ reboot=true
 
 mac安装任何来源的安装包
 sudo -spctl --master-disable
+
+REST：Representational State Transfer 表述性状态传递
+
+springboot：约定大于配置
+
+Docker通常用于如下场景：
+    web应用的自动化打包和发布。
+    自动化测试和持续集成、发布。
+    在服务型环境中部署和调整数据库或其他的后台应用。
+    从头编译或者扩展现有的OpenShift或Cloud Foundry平台来搭建自己的PaaS环境。
+	
+navicat查询mysql表结构：
+SELECT
+  COLUMN_TYPE 数据类型,
+    DATA_TYPE 字段类型,
+  CHARACTER_MAXIMUM_LENGTH 长度,
+  IS_NULLABLE 是否为空,
+  COLUMN_DEFAULT 默认值,
+  COLUMN_COMMENT 备注 
+FROM
+ INFORMATION_SCHEMA.COLUMNS where
+table_schema ='hq_origin_lis'AND
+table_name  = 'lcaccept';
+
+对比两张excel
+Sub 数据对比()
+    Dim i As Integer
+    Dim j As Integer
+    Dim s As String
+    'Dim xls As New Excel.Application
+    'Dim wb As Excel.Workbook
+    For i = 1 To 10        '员工基础报表数据范围
+        'Set wb = Sheets(Sheets("lc").Cells(1, i))
+        s = Sheets("lc").Cells(i, 1)
+        'Sheets("" + s + "").Cells(46, 1) = Sheets("" + s + "").UsedRange.Rows.Count
+        For j = 3 To Sheets("" + s + "").UsedRange.Rows.Count
+        'For j = 3 To 43
+        'For j = 3 To 11    '员工待遇统计表数据范围
+          'If Sheets("员工基础报表").Cells(i, 1) = Sheets("员工待遇统计表").Cells(j, 1) Then
+            'If Sheets("" + s + "").Cells(j, 1).Font.Color <> 3 Then
+            If Sheets("" + s + "").Cells(j, 1) <> "" Then
+            If Sheets("" + s + "").Cells(j, 1).Font.Color <> vbRed Then
+               'If UCase(Sheets("" + s + "").Cells(j, 2)) <> UCase(Sheets("" + s + "").Cells(j, 9)) Then
+               If UCase(Sheets("" + s + "").Cells(j, 2)) <> UCase(Sheets("" + s + "").Cells(j, 9)) Then
+               Sheets("" + s + "").Cells(j, 2).Font.Color = vbYellow
+               Sheets("" + s + "").Cells(j, 9).Font.Color = vbBlue
+               'Sheets("员工基础报表").Cells(i, 8) = "已存在"   '存在时进行标记
+               End If
+            End If
+            End If
+        'Next j
+        Next j
+    Next i
+End Sub
+

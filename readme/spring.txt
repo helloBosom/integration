@@ -1,6 +1,7 @@
 spring 顶级项目：
 Spring IO platform:用于系统部署，是可集成的，构建现代化应用的版本平台，具体来说当你使用maven dependency引入spring jar包时它就在工作了。
-Spring Boot:旨在简化创建产品级的 Spring 应用和服务，简化了配置文件，使用嵌入式web服务器，含有诸多开箱即用微服务功能，可以和spring cloud联合部署。
+Spring Boot:旨在简化创建产品级的 Spring 应用和服务，简化了配置文件，使用嵌入式web服务器，含有诸多开箱即用微服务功能，可以
+和spring cloud联合部署。
 Spring Framework:即通常所说的spring 框架，是一个开源的Java/Java EE全功能栈应用程序框架，其它spring项目如spring boot也依赖于此框架。
 Spring Cloud：微服务工具包，为开发者提供了在分布式系统的配置管理、服务发现、断路器、智能路由、微代理、控制总线等开发工具包。
 Spring XD：是一种运行时环境（服务器软件，非开发框架），组合spring技术，如spring batch、spring boot、spring data，采集大数据并处理。
@@ -39,3 +40,34 @@ Spring Cloud Consul：封装了Consul操作，consul是一个服务发现与配�
 Spring Cloud Zookeeper：操作Zookeeper的工具包，用于使用zookeeper方式的服务注册和发现。
 Spring Cloud Stream：数据流操作开发包，封装了与Redis,Rabbit、Kafka等发送接收消息。
 Spring Cloud CLI：基于 Spring Boot CLI，可以让你以命令行方式快速建立云组件。
+
+优势之一：分层架构
+核心要点：支持不绑定到特定J2EE服务的可重用业务和数据访问对象。
+核心：container   实现了IOC：inversion of  control  容器在对象初始化的时候不等对象请求就将依赖传递给它。
+AOP：通过分离应用的业务逻辑和系统级服务（如审计（auditing）和事务（transaction）管理）进行内聚性的开发。
+AOP：集成声明式事务管理。应用对象只实现完成业务逻辑。日志服务模块化，以声明的方式应用到需要日志的组件上。	
+核心容器core定义了创建、配置和管理bean的方式。beanfactory使用IOC.
+context提供上下文信息。
+DAO：提供有意义的异常层次结构
+WEB：上下文模块建立在应用程序上下文模块之上。简化了处理多部分请求以及将请求参数绑定到域对象的工作。
+MVC：高度可配。
+
+总结起来，Spring有如下优点：　　
+1.低侵入式设计，代码污染极低　　
+2.独立于各种应用服务器，可以真正实现Write Once,Run Anywhere的承诺　　
+3.Spring的DI机制降低了业务对象替换的复杂性　　
+4.Spring并不完全依赖于Spring，开发者可自由选用Spring框架的部分或全部
+
+IOC：不创建对象，但是描述创建它们的方式。在代码中不直接与对象和服务连接，但在配置文件中描述哪一组件需要哪一项服务。
+IOC：将处理事情的责任从应用程序代码转移到框架。
+BeanFactory：
+    单态模型：提供了具有特定名称的对象的共享实例，可以在查询时对其进行检索。默认singleton，对于无状态服务对象很理想。
+	原型模型：确保每次检索都会创建单独的对象。在每个用户都需要自己的对象时，原型模型最适合
+	
+spring boot：
+    轻松创建独立的Spring应用程序。
+    内嵌Tomcat、jetty等web容器，不需要部署WAR文件。
+    提供一系列的"starter"来简化的maven配置。
+    开箱即用，尽可能自动配置spring。
+
+spring cloud:为开发人员提供了快速构建分布式系统的一些工具，包括配置管理、服务发现、、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话等。	
