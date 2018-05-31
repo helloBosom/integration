@@ -1,7 +1,6 @@
 package com.logic.dao;
 
 import com.logic.dao.dbhelp.DBHelp;
-import com.logic.dao.dbhelp.DBHelpUtil;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -27,11 +26,7 @@ public class CallProcedureDept {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                DBHelpUtil.closeAll(null, callable, connection);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBHelp.closeAll(null, callable, connection);
             System.out.println("over");
         }
     }
@@ -49,11 +44,7 @@ public class CallProcedureDept {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try {
-                DBHelpUtil.closeAll(null, callable, connection);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+            DBHelp.closeAll(null, callable, connection);
         }
     }
 }

@@ -1,4 +1,4 @@
-import com.logic.dao.dbhelp.DBHelpProperties;
+import com.logic.dao.dbhelp.DBHelp;
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -17,7 +17,7 @@ public class TestClient {
         sqls.add(sql);
         sql = "insert into dept(deptno,dname,loc) values(50,'sales','xian')";
         sqls.add(sql);
-        DBHelpProperties.executeBatchSql(sqls.toArray());
+        DBHelp.executeBatchSql(sqls.toArray());
         System.out.println("success");
     }
 
@@ -29,7 +29,7 @@ public class TestClient {
         parameters.add("MANAGER");
         parameters.add(3000);
         parameters.add(7934);
-        boolean flag = DBHelpProperties.executeSingleSql(sql, parameters.toArray());
+        boolean flag = DBHelp.executeSingleSql(sql, parameters.toArray());
         if (flag) {
             System.out.println("success");
         } else {
@@ -51,14 +51,14 @@ public class TestClient {
         parameter2.add("xian2");
         parameters.add(parameter1);
         parameters.add(parameter2);
-        DBHelpProperties.executeBatchSql(sql, parameters);
+        DBHelp.executeBatchSql(sql, parameters);
         System.out.println("over");
     }
 
     @Test
     public void testMethod4() {
         String sql = "select count(*) from emp";
-        int rows = (Integer.parseInt(DBHelpProperties.executeSqlReturnValue(sql).toString()));
+        int rows = (Integer.parseInt(DBHelp.executeSqlReturnValue(sql).toString()));
         System.out.println("rows:" + rows);
     }
 
@@ -72,7 +72,7 @@ public class TestClient {
 
         PreparedStatement ps;
         try {
-            Connection connection = DBHelpProperties.getConnection();
+            Connection connection = DBHelp.getConnection();
             ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
@@ -90,7 +90,7 @@ public class TestClient {
     @Test
     public void testMethod6() {
         String sql = "select empno,ename,d.deptno,d.dname from dept d,emp e where d.deptno = e.deptno";
-        List<List> rows = DBHelpProperties.queryRowsMultiTables(sql);
+        List<List> rows = DBHelp.queryRowsMultiTables(sql);
         if (rows != null && rows.size() > 0) {
             for (int i = 0; i < rows.size(); i++) {
                 List record = rows.get(i);

@@ -1,7 +1,5 @@
 package com.logic.dao;
 
-import com.logic.dao.dbhelp.DBHelpUtil;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

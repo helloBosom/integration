@@ -1,4 +1,4 @@
-import com.logic.dao.dbhelp.DBHelpProperties;
+import com.logic.dao.dbhelp.DBHelp;
 
 import java.sql.*;
 
@@ -9,7 +9,7 @@ public class ResultMetaColumnTest {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            connection = DBHelpProperties.getConnection();
+            connection = DBHelp.getConnection();
             ps = connection.prepareStatement(sql);
             rs = ps.executeQuery();
             /**

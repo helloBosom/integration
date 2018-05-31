@@ -82,7 +82,7 @@ public class Ipv4Util {
     }
 
     /**
-     * @param mask 任意的如"255.255.254.0"等格式，如果格式不合法，抛出UnknownError异常错误
+     * @param masks 任意的如"255.255.254.0"等格式，如果格式不合法，抛出UnknownError异常错误
      */
     public Ipv4Util(String masks) {
         mask = getIpV4Value(masks);

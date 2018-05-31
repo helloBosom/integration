@@ -10,13 +10,27 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Properties;
 
 public class FileUtil {
-    public static final String digitalDirectory = System.getProperty("user.home") + "\\abchain\\digital";
+
+    static Properties properties = new Properties();
+    static ClassLoader loader = FileUtil.class.getClassLoader();
+    static InputStream inputStream = loader.getResourceAsStream("");
+
+    static {
+        try {
+            properties.load(inputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static final String path = properties.getProperty("");
     static final Logger logger = LoggerFactory.getLogger(FileUtil.class);
 
     public static File createFile(String path, String fileName) {
-        String absoluteLocation = path + "\\" + fileName;
+        String absoluteLocation = path + File.separator + fileName;
         File file = new File(path);
         if (!file.isDirectory()) {
             file.mkdirs();
@@ -33,10 +47,6 @@ public class FileUtil {
         return file1;
     }
 
-    public static File createDigital(String file) {
-        return createFile(digitalDirectory, file);
-    }
-
     public static File searchFile(String path, String fileName) {
         File dir = new File(path);
         if (!dir.isDirectory()) {
@@ -50,10 +60,6 @@ public class FileUtil {
             }
         }
         return null;
-    }
-
-    public static File searchDigital(String fileName) {
-        return searchFile(digitalDirectory, fileName);
     }
 
     public static String readFile(File file) {
@@ -82,16 +88,12 @@ public class FileUtil {
     }
 
     public static boolean fileExist(String path, String fileName) {
-        String absoluteLocation = path + "\\" + fileName;
+        String absoluteLocation = path + File.separator + fileName;
         File file = new File(absoluteLocation);
         if (file.exists()) {
             return true;
         }
         return false;
-    }
-
-    public static boolean digitalFileExist(String fileName) {
-        return fileExist(digitalDirectory, fileName);
     }
 
     public static void writeFile(File file, String digital) {
