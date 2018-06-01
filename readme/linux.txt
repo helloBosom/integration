@@ -27,3 +27,8 @@ ls | less
 从日志中查询符合条件的内容并输出到另一文件：
 grep 'test' out.log > out1.log
 grep 'test' out.log | tee -a out1.log
+
+vim跳转：
+在源代码的根目录（比如：/myapp/src）下执行ctags。
+# cd /myapp/src  // 先进入源代码根目录
+# ctags -R *
