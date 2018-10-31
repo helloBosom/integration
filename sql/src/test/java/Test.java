@@ -1,4 +1,4 @@
-import com.logic.sql.connect.Connect;
+import fun.peri.sql.connect.Connect;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

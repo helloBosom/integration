@@ -6,9 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by chenq on 2017/9/29.
- */
 public class CollectionUtil {
 
     public static <K, V> Map<K, V> list2Map(List<V> list, String fieldName4Key, Class<V> c) {
@@ -27,7 +24,6 @@ public class CollectionUtil {
                 throw new IllegalArgumentException("field can't match the key!");
             }
         }
-
         return map;
     }
 }

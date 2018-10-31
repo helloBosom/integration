@@ -11,8 +11,6 @@ import java.security.NoSuchAlgorithmException;
  */
 public class MD5Util {
     public final static String MD5(String s) {
-
-
         try {
             byte[] btInput = s.getBytes();
             // 获得MD5摘要算法的 MessageDigest 对象

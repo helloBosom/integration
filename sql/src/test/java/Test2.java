@@ -1,4 +1,4 @@
-import com.logic.dao.dbhelp.DBHelp;
+import fun.peri.dao.dbhelp.DBHelp;
 
 import java.io.InputStream;
 import java.sql.*;

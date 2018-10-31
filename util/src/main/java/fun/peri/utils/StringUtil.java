@@ -5,9 +5,6 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by chenq on 2017/9/25.
- */
 public class StringUtil {
 
     public static String convert2LikeMatched(String templateName) {
