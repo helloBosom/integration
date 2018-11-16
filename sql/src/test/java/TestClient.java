@@ -1,4 +1,4 @@
-import fun.peri.dao.dbhelp.DBHelp;
+import fun.peri.dao.DBHelp;
 import org.junit.Test;
 
 import java.sql.Connection;

@@ -1,6 +1,7 @@
 package fun.peri.thread;
 
 public class Storage {
+
     private int index = 0;
     Apple[] apples = new Apple[5];
 

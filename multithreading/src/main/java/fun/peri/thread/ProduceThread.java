@@ -1,6 +1,7 @@
 package fun.peri.thread;
 
 public class ProduceThread implements Runnable {
+
     private Storage storage;
 
     public void run() {

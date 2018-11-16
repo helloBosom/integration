@@ -48,8 +48,8 @@ public class Test1 {
             ps = conn.prepareStatement("INSERT into dept values (?, ?, ?)");
             for (int n = 0; n < 10; n++) {
                 ps.setString(1, n + "");
-                ps.setString(2, "cissst" + n);
-                ps.setString(3, "orcl" + n);
+                ps.setString(2, "test" + n);
+                ps.setString(3, "oracle" + n);
                 ps.addBatch();
             }
             ps.executeBatch();

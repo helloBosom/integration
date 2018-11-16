@@ -1,7 +1,5 @@
 package fun.peri.dao;
 
-import fun.peri.dao.dbhelp.DBHelp;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

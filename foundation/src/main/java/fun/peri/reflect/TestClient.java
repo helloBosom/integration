@@ -1,9 +1,9 @@
 package fun.peri.reflect;
 
+import org.junit.Test;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
-import org.junit.Test;
 
 /**
  * 反射机制:
@@ -15,6 +15,7 @@ import org.junit.Test;
  * Class 对象是在加载类时由 Java 虚拟机以及通过调用类加载器中的 defineClass 方法自动构造的。
  */
 public class TestClient {
+    
     @Test
     public void testMethod1() {
         Person person = new Person();

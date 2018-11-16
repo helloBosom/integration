@@ -3,6 +3,7 @@ package fun.peri.arithmetic;
 import org.junit.Test;
 
 public class Tests {
+
     @Test
     public void test1() {
         double x = Math.pow(82.7 / 25.0, 1.0 / 10.0);

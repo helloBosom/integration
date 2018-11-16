@@ -1,6 +1,7 @@
 package fun.peri.thread;
 
 public class ConsumeThread implements Runnable {
+
 	private Storage storage;
 
 	public ConsumeThread() {

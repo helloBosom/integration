@@ -11,7 +11,7 @@ public class Messages {
      * 以这种方式可以编写很大程度上独立于用户语言环境的程序代码，它将资源包中大部分（如果不是全部）
      * 特定于语言环境的信息隔离开来
      */
-    private static final String BUNDLE_NAME = "com.logic.model.Message";
+    private static final String BUNDLE_NAME = "fun.peri.model.Message";
 
     /**
      * getBundle(String baseName, Locale locale, ClassLoader loader)
