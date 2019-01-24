@@ -11,14 +11,16 @@
     <url>http://maven.apache.org</url>
     <modules>
         <module>foundation</module>
-        <module>multithreading</module>
+        <module>multiThread</module>
         <module>sql</module>
-        <module>web</module>
         <module>redBlackTree</module>
         <module>util</module>
+        <module>designPatterns</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
 </project>

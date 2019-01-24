@@ -1,6 +1,6 @@
 package fun.peri.arithmetic;
 
-import fun.peri.arithmetic.Util.BreakNumber;
+import fun.peri.arithmetic.util.BreakNumber;
 
 import java.util.Arrays;
 

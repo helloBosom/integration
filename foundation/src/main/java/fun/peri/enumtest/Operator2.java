@@ -5,6 +5,7 @@ package fun.peri.enumtest;
  */
 public enum Operator2 {
     ADD {
+        @Override
         public int calculate(int a, int b) {
             return a + b;
         }

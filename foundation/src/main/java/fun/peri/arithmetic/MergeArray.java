@@ -1,7 +1,7 @@
 package fun.peri.arithmetic;
 
-import fun.peri.arithmetic.Util.GenerateArray;
-import fun.peri.arithmetic.Util.SortArray;
+import fun.peri.arithmetic.util.GenerateArray;
+import fun.peri.arithmetic.util.SortArray;
 
 import java.util.Random;
 
