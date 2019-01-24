@@ -424,3 +424,163 @@ bean的衍生
 调用Setter方法注入属性值。
 @Qualifier 指定注入Bean的名称
 @Autowired默认按类型匹配注入Bean，@Resource则按名称匹配注入Bean。而@Inject和@Autowired一样也是按类型匹配注入的Bean的，只不过它没有required属性
+
+@Value的值有两类：
+① ${ property : default_value }
+② #{ obj.property? : default_value }
+
+nginx配置主要组成部分
+1.main：用于进行nginx全局信息的配置
+2.events：用于nginx工作模式的配置
+3.http：用于进行http协议信息的一些配置
+4.server：用于进行服务器访问信息的配置
+5.location：用于进行访问路由的配置
+6.upstream：用于进行负载均衡的配置
+
+ps aux|head -1;
+ps aux|grep -v PID|sort -rn -k +3|head
+
+@resource可以理解为资源->数据源->也就是数据连接，基本上就是告诉程序 数据库在哪里
+
+@persistencecontext则是注入一坨保存实体类状态的 数据结构，针对实体类的不同状态(四种,managedh或detached等)可以做出不同的
+反应(merge,persist等等)，其实就是把数据从数据库里提出，然后在内存里处理的，再返回 数据库的法则。 
+
+JVM参数配置途径：
+1.Tomcat/bin/catalina.bat
+2.IDE中配置
+
+G1的目标是为应用提供停顿时间和吞吐量的最佳平衡
+-XX:+UseG1GC
+初始标记、并发标记、重新标记、清除、转移回收。
+并行收集、串行担保
+G1不存在物理上的年轻代和老年代的区别。
+
+大对象是直接分配在old区。blob等。
+
+JPA
+Builder -> Query -> Criteria ->select
+Predicate  定义希望用于FilteredRowSet对象的过滤器
+动态查询   重写toPredicate
+@Version 乐观锁
+@Lock 悲观锁或手动配置乐观锁
+
+joda：Date类处理工具
+
+weChatDev：
+start -> onLaunch callback
+json -> page -wxml ->wxss ->js
+page： 
+页面构造器
+        / \
+	 data  index.wxml
+	           ↓
+			  onload -> deal
+框架以栈的形式维护页面	
+
+ZGC（垃圾收集）主要新增了两项技术，一个是着色指针Colored Pointer，另一个是读屏障Load Barrier。		  
+
+开源社区
+http://sourceforge.net/
+http://www.apache.org/
+
+maven 
+<exclusion>  排除依赖
+
+面向过程：在面向过程程序设计时，数据和操作往往是分离的
+自顶向下、逐步求精
+
+面向对象：面向对象是将数据和操作数据的函数紧密结合
+程序是对现实世界的抽象和描述，现实世界的基本单元是物体，与之对应的，程序中的基本单元是对象。
+对象都由两部分组成 - 描述对象状态或属性的数据（变量）以及描述对象行为或者功能的方法（函数）。
+
+抽象类不能被实例化
+
+接口过时时添加@Deprecated
+
+ArrayList的subList结果不可强转成ArrayList，subList返回的是ArrayList的内部类SubList，并不是 ArrayList，而是ArrayList的一个视图，
+对于SubList子列表的所有操作最终会反映到原列表上。
+
+集合初始化时指定大小 （需要存储的元素个数/负载因子）+1
+
+获取单例对象需要保证线程安全，其中的方法也需要保证线程安全
+
+git更新远程分支
+git remote update origin --prune
+
+避免在锁代码块中调用RPC方法
+
+对多个资源、数据库表、对象同时加锁时，需要保持一致的加锁顺序，否则可能会造成死锁。
+
+hashMap在resize的时候由于高并发可能出现死链，加锁规避此风险
+
+spring手动回滚事务：
+TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+
+System.getProperty()参数大全 
+# java.version                                Java Runtime Environment version  
+# java.vendor                                Java Runtime Environment vendor  
+# java.vendor.url                           Java vendor URL  
+# java.home                                Java installation directory  
+# java.vm.specification.version   Java Virtual Machine specification version  
+# java.vm.specification.vendor    Java Virtual Machine specification vendor  
+# java.vm.specification.name      Java Virtual Machine specification name  
+# java.vm.version                        Java Virtual Machine implementation version  
+# java.vm.vendor                        Java Virtual Machine implementation vendor  
+# java.vm.name                        Java Virtual Machine implementation name  
+# java.specification.version        Java Runtime Environment specification version  
+# java.specification.vendor         Java Runtime Environment specification vendor  
+# java.specification.name           Java Runtime Environment specification name  
+# java.class.version                    Java class format version number  
+# java.class.path                      Java class path  
+# java.library.path                 List of paths to search when loading libraries  
+# java.io.tmpdir                       Default temp file path  
+# java.compiler                       Name of JIT compiler to use  
+# java.ext.dirs                       Path of extension directory or directories  
+# os.name                              Operating system name  
+# os.arch                                  Operating system architecture  
+# os.version                       Operating system version  
+# file.separator                         File separator ("/" on UNIX)  
+# path.separator                  Path separator (":" on UNIX)  
+# line.separator                       Line separator ("/n" on UNIX)  
+# user.name                        User’s account name  
+# user.home                              User’s home directory  
+# user.dir                               User’s current working directory
+
+MySQL：
+可以使用唯一索引支持业务唯一性
+当某一列的值全是NULL时，count(col)的返回结果为0，但sum(col)的返回结果为NULL
+使用ISNULL()来判断是否为NULL值。NULL与任何值的直接比较都为NULL。
+外键与级联更新适用于单机低并发，不适合分布式、高并发集群；级联更新是强阻塞，存在数据库更新风暴的风险；外键影响数据库的插入速度。
+如果需要存储表情，那么选择utfmb4来进行存储。utfmb4是utf8的超集，完全兼容utf8，utfmb4采用四字节存储，utf8采用3字节。
+
+分层领域模型规约：
+    DO（Data Object）；
+	DTO（Data Transfer Object）；
+	BO（Business Object）；
+	AO（Application Object）；
+	VO（View Object）；
+	
+maven:	
+mvn dependency:resolve  前后信息比对	
+mvn dependency:tree     找出差异点	
+	
+WAR文件代表了一个Web应用程序，JAR是类的归档文件	
+
+在Maven中dependencyManagement的作用其实相当于一个对所依赖jar包进行版本管理的管理器。
+
+-XX:+HeapDumpOnOutOfMemoryError参数，让JVM碰到OOM场景时输出dump信息
+
+/etc/sysctl.conf
+net.ipv4.tcp_fin_timeout = 30    调小tcp协议的time_out超时时间
+
+ulimit -a : 查看linux相关的参数
+ulimit -n 2048 ： 修改当前进程linux最大文件句柄数
+
+/etc/security/linits.conf   
+*　　soft　　nofile　　65536
+*　　hard　　nofile　　65536
+修改当前用户最大句柄数（fd:  file descriptor）
+
+线上环境jvm的Xms和Xmx设置一样大小的内存容量，避免在GC后调整堆大小带来的压力
+
+服务器内部重定向使用forward；外部重定向使用url拼装
