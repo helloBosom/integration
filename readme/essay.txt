@@ -584,3 +584,22 @@ ulimit -n 2048 ： 修改当前进程linux最大文件句柄数
 线上环境jvm的Xms和Xmx设置一样大小的内存容量，避免在GC后调整堆大小带来的压力
 
 服务器内部重定向使用forward；外部重定向使用url拼装
+
+查看linux硬件
+cpu：lscpu
+内存：free -m
+查看系统支持的io调度算法：dmesg | grep -i scheduler
+
+mysql引擎：
+    ISAM:不支持事务   需经常备份     查询性能高
+	MYISAM:表级别锁定    快速读取    有索引和字段管理    损坏后不能恢复
+	HEAP：驻留内存
+	INNODB: 支持事务和外键    不保存行数  select(*)效率差   select(*)包含where时效率与MYISAM一样  支持行级锁
+
+jvm：young区到old区转换时   GC root(可达性分析)
+     instance几次判断之后  -> old
+
+OOP(Object oriented programing):
+    原则之一：计算机程序是有单个能够起到子程序作用的单元或对象组合而成。
+    重用、灵活、扩展
+    封装、继承、多态
