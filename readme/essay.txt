@@ -603,3 +603,5 @@ OOP(Object oriented programing):
     原则之一：计算机程序是有单个能够起到子程序作用的单元或对象组合而成。
     重用、灵活、扩展
     封装、继承、多态
+
+redis String 最大长度：512M

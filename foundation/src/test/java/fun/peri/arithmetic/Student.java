@@ -1,45 +1,16 @@
 package fun.peri.arithmetic;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Student {
+    private long id;
     private String name;
     private double age;
     private double score;
     private String classNum;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getAge() {
-        return age;
-    }
-
-    public void setAge(double age) {
-        this.age = age;
-    }
-
-    public double getScore() {
-        return score;
-    }
-
-    public void setScore(double score) {
-        this.score = score;
-    }
-
-    public String getClassNum() {
-        return classNum;
-    }
-
-    public void setClassNum(String classNum) {
-        this.classNum = classNum;
-    }
-
-    public Student() {
-    }
 
     public Student(String name, double age, double score, String classNum) {
         this.name = name;
@@ -86,11 +57,10 @@ public class Student {
         if (name == null) {
             if (other.name != null)
                 return false;
-        } else if (!name.equals(other.name))
+        } else if (!name.equals(other.name)) {
             return false;
-        if (Double.doubleToLongBits(score) != Double.doubleToLongBits(other.score))
-            return false;
-        return true;
+        }
+        return Double.doubleToLongBits(score) == Double.doubleToLongBits(other.score);
     }
 
 

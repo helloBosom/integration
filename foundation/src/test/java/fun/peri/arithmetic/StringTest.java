@@ -1,4 +1,4 @@
-package fun.peri.test;
+package fun.peri.arithmetic;
 
 import org.junit.jupiter.api.Test;
 
@@ -89,7 +89,7 @@ public class StringTest {
 
     @Test
     void TestThread() {
-        System.out.println(new TimerTaskThread().getName());
+//        System.out.println(new TimerTaskThread().getName());
     }
 
     @Test
@@ -334,6 +334,21 @@ public class StringTest {
             System.out.println(obj.getKey());
             System.out.println(map.values());
         }
+    }
+
+    /**
+     * classloader
+     */
+    @Test
+    void testClassLoader(){
+        ClassLoader loader = StringTest.class.getClassLoader();
+        System.out.println(loader);
+        ClassLoader c1 = loader.getParent();
+        System.out.println(c1);
+        ClassLoader c2 = c1.getParent();
+        System.out.println(c2);
+//        ClassLoader c3 = c2.getParent();
+//        System.out.println(c3);
     }
 
 }

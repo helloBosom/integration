@@ -14,8 +14,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
-import javax.annotation.PreDestroy;
-
 @Configuration
 @ConditionalOnClass({GenericObjectPool.class, FTPClient.class})
 @ConditionalOnProperty(value = "ftp.enabled", havingValue = "true")
@@ -61,7 +59,6 @@ public class FTPConfiguration {
         }
     }
 
-    @PreDestroy
     public void destroy() {
         if (pool != null) {
             pool.close();
@@ -213,6 +210,6 @@ public class FTPConfiguration {
             }
             return p.getObject();
         }
-
     }
+
 }

@@ -1,26 +1,22 @@
 package fun.peri.arithmetic;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class CircleRadius {
-	double radius;
+    double radius;
 
-	public CircleRadius() {
-	}
+    public CircleRadius() {
+    }
 
-	public CircleRadius(double radius) {
-		this.radius = radius;
-	}
+    public CircleRadius(double radius) {
+        this.radius = radius;
+    }
 
-	public double getRadius() {
-		return radius;
-	}
-
-	public void setRadius(double radius) {
-		this.radius = radius;
-
-	}
-
-	public double calculateArea() {
-		return Math.PI * radius * radius;
-	}
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
 
 }

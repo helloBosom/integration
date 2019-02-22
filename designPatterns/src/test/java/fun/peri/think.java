@@ -7,10 +7,12 @@ import java.io.*;
 
 public class think {
 
+    private static final String CHARSET = "utf-8";
+
     @Test
     public void TestOne() {
         File file = new File("D:" + File.separator + "think.txt");
-        Boolean result = false;
+        boolean result = false;
         try {
             if (!file.exists()) {
                 result = file.createNewFile();
@@ -57,7 +59,7 @@ public class think {
             stringBuffer.append(weChat);
             String data = "";
             try {
-                data = new String(stringBuffer.toString().getBytes(), "utf-8");
+                data = new String(stringBuffer.toString().getBytes(), CHARSET);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -75,7 +77,7 @@ public class think {
                         buffer = data.substring(index, index + length);
                     }
                     index = index + length;
-                    outputStream.write(buffer.getBytes("utf-8"));
+                    outputStream.write(buffer.getBytes(CHARSET));
                 }
             } catch (FileNotFoundException e) {
                 System.out.println("io error, file not exist");

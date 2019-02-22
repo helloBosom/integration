@@ -18,4 +18,5 @@ public class Single {
         System.out.println(s2.hashCode());
         System.out.println(s1.equals(s2));
     }
+
 }
